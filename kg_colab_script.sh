@@ -1,5 +1,6 @@
 # Script to download dataset from Kaggle to Google Colab
 # Have to upload kaggle.json manually to current directory
+# Running command in colab: ! chmod +x kg_colab_script.sh && ./kg_colab_script.sh user/dataset
 #!/bin/bash
 pip install -q kaggle
 mkdir ~/.kaggle
