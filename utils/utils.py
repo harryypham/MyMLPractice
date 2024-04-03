@@ -2,7 +2,21 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 import torchvision.transforms as transforms
+import torchvision.utils as vutils
 
+# Load data
+# dataiter = iter(trainloader)
+# images, labels = next(dataiter)
+
+#Simple
+def imshow(images):
+    plt.figure(figsize=(8,8))
+    plt.axis("off")
+    plt.title("Training Images")
+    plt.imshow(np.transpose(vutils.make_grid(images[:], padding=2, normalize=True).cpu(),(1,2,0)))
+    plt.show()
+
+#Custom
 #Fill in the mean and standard deviation of dataset
 mean, std = None, None
 
@@ -30,7 +44,4 @@ def imshow(img_batch, rows, fig_size):
   plt.subplots_adjust(hspace=0, wspace=0)
   plt.show()
 
-#To visualize images
-# dataiter = iter(trainloader)
-# images, labels = next(dataiter)
 # imshow(images, rows=2, fig_size=3)
